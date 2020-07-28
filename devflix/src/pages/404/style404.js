@@ -186,6 +186,8 @@ body {
 }
 
 .notfound-social>a {
+  -webkit-box-shadow: 0px 0px 0px 2px #000, 2px 2px 0px 2px #000;
+          box-shadow: 0px 0px 0px 2px #000, 2px 2px 0px 2px #000;
   width: 50px;
   height: 50px;
   line-height: 40px;
