@@ -1,12 +1,15 @@
+import styled from 'styled-components';
+
+export const Page404 = styled.div`
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+          
 }
 
 body {
   padding: 0;
   margin: 0;
-  background-color: #000;
 }
 
 #notfound {
@@ -17,7 +20,7 @@ body {
 #notfound .notfound {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -209,3 +212,4 @@ body {
     font-size: 26px;
   }
 }
+`
