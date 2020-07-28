@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ContentAreaContainer = styled.section`
-  padding-top: 150px;
   margin-left: 5%;
   margin-right: 5%;
   height: 100%;
