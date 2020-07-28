@@ -1,10 +1,10 @@
-//import ButtonLink from './components/ButtonLink';
+
 import React from 'react';
 import './menu.css';
 import Button from '../Button'
 //componentes feito por eles
-import Footer from '../Footer'
-import { FooterBase } from '../Footer/styles';
+//import Footer from '../Footer'
+//import { FooterBase } from '../Footer/styles';
 
 function Menu() {
     return (
