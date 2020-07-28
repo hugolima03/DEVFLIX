@@ -9,10 +9,10 @@ const Button = styled(Link)`
     font-weight: bold;
     font-size: 16px;
     outline: none;
-    border-radius: 5px;
+    border-radius: 0px;
     text-decoration: none;
     display: inline-block;
-    transition: opacity .3s;
+    transition: opacity .3s; 
 `;
 
 export default Button
