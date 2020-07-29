@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
+import {EstiloForm} from './styles';
 
 
 function CadastroCategoria() {
@@ -29,61 +30,65 @@ function CadastroCategoria() {
     }
 
     return (
-        <PageDefault>
-            <h1>
-                Cadastro de Categoria : {values.nome}
-            </h1>
-            <form onSubmit={function handleSubmit(infosDoEvento) {
-
-                infosDoEvento.preventDefault();
-                setCategorias([
-                    ...categorias,
-                    values
-                ]);
-                setValues(valoresIniciais);
-            }}>
-                <FormField
-                    label="Nome da Categoria"
-                    value={values.nome}
-                    onChange={handleChange}
-                    type="text"
-                    name="nome"
-                />
-
-                <FormField
-                    label="Descrição"
-                    value={values.descricao}
-                    onChange={handleChange}
-                    type="textarea"
-                    name="descricao"
-                />
-
-                <FormField
-                    label="Cor"
-                    value={values.cor}
-                    onChange={handleChange}
-                    type="color"
-                    name="cor"
-                />
-
-                <button>
-                    Cadastrar
-                </button>
-            </form>
-            <ul>
-                {categorias.map((categoria, indice) => {
-                    return (
-                        <li key={`${categoria}, ${indice}`}>
-                            {categoria.nome}
-                        </li>
-                    )
-                })}
-            </ul>
-
-            <Link to="/">
-                Ir para home
-            </Link>
-        </PageDefault>
+        <EstiloForm>
+            <PageDefault>
+                <h1>
+                    Cadastro de Categoria : {values.nome}
+                </h1>
+                <form onSubmit={function handleSubmit(infosDoEvento) {
+    
+                    infosDoEvento.preventDefault();
+                    setCategorias([
+                        ...categorias,
+                        values
+                    ]);
+                    setValues(valoresIniciais);
+                }}>
+                    <FormField
+                        placeholder="Podcast"
+                        label="Nome da Categoria"
+                        value={values.nome}
+                        onChange={handleChange}
+                        type="text"
+                        name="nome"
+                    />
+    
+                    <FormField
+                        placeholder="Flow Podcast"
+                        label="Descrição"
+                        value={values.descricao}
+                        onChange={handleChange}
+                        type="textarea"
+                        name="descricao"
+                    />
+    
+                    <FormField
+                        label="Cor"
+                        value={values.cor}
+                        onChange={handleChange}
+                        type="color"
+                        name="cor"
+                    />
+    
+                    <button className="FormButton">
+                        Cadastrar
+                    </button>
+                </form>
+                <ul>
+                    {categorias.map((categoria, indice) => {
+                        return (
+                            <li key={`${categoria}, ${indice}`}>
+                                {categoria.nome}
+                            </li>
+                        )
+                    })}
+                </ul>
+    
+                <Link to="/" className="voltar">
+                    Ir para home
+                </Link>
+            </PageDefault>
+        </EstiloForm>
     )
 }
 
