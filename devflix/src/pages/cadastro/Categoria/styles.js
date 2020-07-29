@@ -14,6 +14,7 @@ export const EstiloForm = styled.div`
         font-size: 15px;
     }
     input[type=text]{
+        color: #fff;
         width: 100%;
         background-color: transparent;
         border: 2px solid #aaa;
@@ -42,6 +43,7 @@ export const EstiloForm = styled.div`
         box-sizing: border-box;
         transition: .3s;
         font-size: 15px;
+        color: #fff;
     }
     input[type=textarea]:focus{
         background-color: transparent;
@@ -52,6 +54,25 @@ export const EstiloForm = styled.div`
     button{
         
         margin-left: 20px;
+    }
+    textarea{
+        color: #fff;
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid #aaa;
+        border-radius: 4px;
+        margin: 8px 0;
+        outline: none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: .3s;
+        font-size: 15px;
+    }
+    textarea:focus {
+        background-color: transparent;
+        color: #fff;
+        border-color:greenyellow;
+        box-shadow: 0 0 8px 0 greenyellow;
     }
     .voltar{
         margin-left: 20px;
