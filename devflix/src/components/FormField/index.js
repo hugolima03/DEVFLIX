@@ -17,7 +17,6 @@ function FormField({ placeholder, label, value, name, onChange, type }) {
                 </textarea>
             </div>
         )
-        console.log('as')
     } else {
         return (
 

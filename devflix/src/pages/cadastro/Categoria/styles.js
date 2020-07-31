@@ -94,4 +94,7 @@ export const EstiloForm = styled.div`
     .FormButton:hover{
         box-shadow: 0px 0px 20px #0f9b0f;
     }
+    .coluna1{
+        width: 50%;
+    }
 `

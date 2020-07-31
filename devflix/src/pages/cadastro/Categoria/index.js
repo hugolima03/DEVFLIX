@@ -32,61 +32,63 @@ function CadastroCategoria() {
     return (
         <EstiloForm>
             <PageDefault>
-                <h1>
-                    Cadastro de Categoria : {values.nome}
-                </h1>
-                <form onSubmit={function handleSubmit(infosDoEvento) {
-    
-                    infosDoEvento.preventDefault();
-                    setCategorias([
-                        ...categorias,
-                        values
-                    ]);
-                    setValues(valoresIniciais);
-                }}>
-                    <FormField
-                        placeholder="Podcast"
-                        label="Nome da Categoria"
-                        value={values.nome}
-                        onChange={handleChange}
-                        type="text"
-                        name="nome"
-                    />
-    
-                    <FormField
-                        placeholder="Flow Podcast"
-                        label="Descrição"
-                        value={values.descricao}
-                        onChange={handleChange}
-                        type="textarea"
-                        name="descricao"
-                    />
-    
-                    <FormField
-                        label="Cor"
-                        value={values.cor}
-                        onChange={handleChange}
-                        type="color"
-                        name="cor"
-                    />
-    
-                    <button className="FormButton">
-                        Cadastrar
-                    </button>
-                </form>
-                <ul>
-                    {categorias.map((categoria) => {
-                        return (
-                            <li key={`${categoria.nome}`}>
-                                {categoria.nome}
-                            </li>
-                        )
-                    })}
-                </ul>
-    
-                <Link to="/" className="voltar">
-                    Ir para home
-                </Link>
+                <div className="coluna1">
+                    <h1>
+                        Cadastro de Categoria  {values.nome}
+                    </h1>
+                    <form onSubmit={function handleSubmit(infosDoEvento) {
+        
+                        infosDoEvento.preventDefault();
+                        setCategorias([
+                            ...categorias,
+                            values
+                        ]);
+                        setValues(valoresIniciais);
+                    }}>
+                        <FormField
+                            placeholder="Podcast"
+                            label="Nome da Categoria"
+                            value={values.nome}
+                            onChange={handleChange}
+                            type="text"
+                            name="nome"
+                        />
+        
+                        <FormField
+                            placeholder="Flow Podcast"
+                            label="Descrição"
+                            value={values.descricao}
+                            onChange={handleChange}
+                            type="textarea"
+                            name="descricao"
+                        />
+        
+                        <FormField
+                            label="Cor"
+                            value={values.cor}
+                            onChange={handleChange}
+                            type="color"
+                            name="cor"
+                        />
+        
+                        <button className="FormButton">
+                            Cadastrar
+                        </button>
+                    </form>
+                    <ul>
+                        {categorias.map((categoria) => {
+                            return (
+                                <li key={`${categoria.nome}`}>
+                                    {categoria.nome}
+                                </li>
+                            )
+                        })}
+                    </ul>
+        
+                    <Link to="/" className="voltar">
+                        Ir para home
+                    </Link>
+                </div>
             </PageDefault>
         </EstiloForm>
     )
