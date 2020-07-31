@@ -15,7 +15,7 @@ export const EstiloForm = styled.div`
     }
     input[type=text]{
         color: #fff;
-        width: 100%;
+        width: 50%;
         background-color: transparent;
         border: 2px solid #aaa;
         border-radius: 4px;
@@ -57,7 +57,7 @@ export const EstiloForm = styled.div`
     }
     textarea{
         color: #fff;
-        width: 100%;
+        width: 50%;
         background-color: transparent;
         border: 2px solid #aaa;
         border-radius: 4px;
@@ -95,6 +95,7 @@ export const EstiloForm = styled.div`
         box-shadow: 0px 0px 20px #0f9b0f;
     }
     .coluna1{
-        width: 50%;
+        align-items: center;
+        text-align: center;
     }
 `

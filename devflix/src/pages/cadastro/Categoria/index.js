@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
-import {EstiloForm} from './styles';
+import { EstiloForm } from './styles';
 
 
 function CadastroCategoria() {
@@ -10,7 +10,7 @@ function CadastroCategoria() {
     const valoresIniciais = {
         nome: '',
         descricao: '',
-        cor: '#bbbbbb',
+        cor: '#000000',
     }
     const [categorias, setCategorias] = useState([]);
     const [values, setValues] = useState(valoresIniciais);
@@ -29,6 +29,18 @@ function CadastroCategoria() {
         );
     }
 
+    useEffect(() => {
+        const URL = 'http://localhost:8080/categorias';
+        fetch(URL)
+        .then(async (respostaDoServidor) => {
+            const resposta = await respostaDoServidor.json();
+            setCategorias([
+                ...resposta,
+            ]);
+        });
+    }, []);
+
+
     return (
         <EstiloForm>
             <PageDefault>
@@ -37,7 +49,7 @@ function CadastroCategoria() {
                         Cadastro de Categoria  {values.nome}
                     </h1>
                     <form onSubmit={function handleSubmit(infosDoEvento) {
-        
+
                         infosDoEvento.preventDefault();
                         setCategorias([
                             ...categorias,
@@ -53,7 +65,7 @@ function CadastroCategoria() {
                             type="text"
                             name="nome"
                         />
-        
+
                         <FormField
                             placeholder="Flow Podcast"
                             label="Descrição"
@@ -62,7 +74,7 @@ function CadastroCategoria() {
                             type="textarea"
                             name="descricao"
                         />
-        
+
                         <FormField
                             label="Cor"
                             value={values.cor}
@@ -70,11 +82,16 @@ function CadastroCategoria() {
                             type="color"
                             name="cor"
                         />
-        
+
                         <button className="FormButton">
                             Cadastrar
                         </button>
                     </form>
+
+                    {categorias.length === 0 && (<div>
+                        Loading...
+                    </div>)}
+
                     <ul>
                         {categorias.map((categoria) => {
                             return (
@@ -84,7 +101,7 @@ function CadastroCategoria() {
                             )
                         })}
                     </ul>
-        
+
                     <Link to="/" className="voltar">
                         Ir para home
                     </Link>

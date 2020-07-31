@@ -6,7 +6,7 @@ function FormField({ placeholder, label, value, name, onChange, type }) {
             <div>
                 <label>
                     {label} : 
-                </label>
+                </label><br></br>
                 <textarea
                     autoComplete="off"
                     placeholder={placeholder}
@@ -22,7 +22,7 @@ function FormField({ placeholder, label, value, name, onChange, type }) {
 
             <div>
                 <label>
-                    {label} :
+                    {label} : <br></br>
                 <input
                         autoComplete="off"
                         placeholder={placeholder}
