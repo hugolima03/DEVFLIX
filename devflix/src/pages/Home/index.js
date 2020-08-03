@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Menu from '../../components/Menu/index.js';
 import BannerMain from '../../components/BannerMain';
 import dadosIniciais from '../../data/dados_iniciais.json'
@@ -6,6 +6,18 @@ import Carousel from '../../components/Carousel';
 import Footer from '../../components/Footer/index.js';
 
 function Home() {
+
+  useEffect(()=> {
+    const URL = 'http://localhost:8080/categorias';
+        fetch(URL)
+        .then(async (respostaDoServidor) => {
+            //const resposta = await respostaDoServidor.json();
+            // setCategorias([
+            //     ...resposta,
+            // ]);
+        });
+  });
+
   return (
     <div style={{background: '#141414'}}>
       <Menu />
